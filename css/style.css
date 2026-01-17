@@ -265,6 +265,7 @@ nav {
 
 /* Language Toggle */
 /* Language Toggle */
+/* Language Toggle */
 .lang-toggle {
     display: flex;
     align-items: center;
@@ -272,6 +273,10 @@ nav {
     gap: var(--space-sm);
     line-height: 1;
     /* prevent height drift */
+
+    /* Defensive Stacking: Ensure controls sit above mobile backdrop or overlays */
+    position: relative;
+    z-index: 102;
 }
 
 .lang-btn {
