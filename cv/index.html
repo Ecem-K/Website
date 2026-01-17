@@ -11,6 +11,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Theme Init (FOUC Prevention) -->
+    <script>
+        (function () {
+            // STRICT REQUIREMENT: Default to 'dark', read 'theme' from localStorage
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
 </head>
 
 <body>
@@ -30,6 +39,12 @@
                 <li><a href="/contact/" data-i18n="nav.contact">Contact</a></li>
             </ul>
             <div class="lang-toggle">
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark/Light Mode">
+                    <!-- Icon will be set by JS or CSS -->
+                    <span class="theme-icon-dark">☾</span>
+                    <span class="theme-icon-light">☀</span>
+                </button>
+                <span class="divider">|</span>
                 <button class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
                 <span>/</span>
                 <button class="lang-btn" data-lang="tr" aria-label="Türkçe'ye geç">TR</button>
