@@ -10,7 +10,17 @@
 }
 
 /* THEME: DARK (Default) */
-:root,
+/* DEFAULT TOKENS ONLY (NO THEME) */
+:root {
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+
+    --font-main: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* DARK THEME */
 [data-theme="dark"] {
     --color-bg: #111111;
     --color-text-main: #ffffff;
@@ -20,7 +30,7 @@
     --color-input-bg: #1a1a1a;
 }
 
-/* THEME: LIGHT */
+/* LIGHT THEME */
 [data-theme="light"] {
     --color-bg: #ffffff;
     --color-text-main: #000000;
@@ -29,6 +39,7 @@
     --color-accent: #000000;
     --color-input-bg: #ffffff;
 }
+
 
 * {
     box-sizing: border-box;
