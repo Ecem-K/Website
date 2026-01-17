@@ -263,9 +263,14 @@ body:not([data-theme="light"]) .theme-icon-light {
 }
 
 /* Language Toggle */
+/* Language Toggle */
 .lang-toggle {
     display: flex;
+    align-items: center;
+    /* Vertical Center */
     gap: var(--space-sm);
+    line-height: 1;
+    /* prevent height drift */
 }
 
 .lang-btn {
@@ -276,6 +281,12 @@ body:not([data-theme="light"]) .theme-icon-light {
     color: var(--color-text-sub);
     font-weight: 600;
     padding: var(--space-sm);
+
+    /* Alignment Fixes */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
 }
 
 .lang-btn.active {
