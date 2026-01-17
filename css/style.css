@@ -182,12 +182,23 @@ nav {
 /* MOBILE ONLY */
 @media (max-width: 768px) {
     .hamburger {
-        display: block;
-        /* Show only on mobile */
+        display: flex;
+        /* Changed from block to flex for centering */
+        align-items: center;
+        justify-content: center;
+
+        /* Layout Safety */
+        flex-shrink: 0;
+        min-width: 44px;
+        /* A11y: Standard Touch Target */
+        min-height: 44px;
+
+        /* Reset appearance */
         background: none;
         border: none;
         cursor: pointer;
-        padding: var(--space-sm);
+        padding: 0;
+        /* Managed by dimension */
         z-index: 101;
     }
 
