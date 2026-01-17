@@ -118,23 +118,19 @@ nav {
     justify-content: center;
 }
 
+/* THEME ICON LOGIC - STRICT SOURCE OF TRUTH */
 .theme-icon-dark,
 .theme-icon-light {
+    display: none;
     font-size: 1.2rem;
 }
 
+/* Dark Mode (Explicit) */
 [data-theme="dark"] .theme-icon-dark {
     display: inline-block;
 }
 
-[data-theme="dark"] .theme-icon-light {
-    display: none;
-}
-
-[data-theme="light"] .theme-icon-dark {
-    display: none;
-}
-
+/* Light Mode (Explicit) */
 [data-theme="light"] .theme-icon-light {
     display: inline-block;
 }

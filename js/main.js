@@ -1,6 +1,8 @@
 import { translations } from './lang.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+    // 1. Initialize Language
+    const savedLang = localStorage.getItem('preferredLang') || 'en';
     applyLanguage(savedLang);
 
     // 2. Dynamic Year
@@ -22,7 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
         themeBtn.addEventListener('click', () => {
             const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
             applyTheme(newTheme);
+
+            // A11y Update
+            const label = newTheme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+            themeBtn.setAttribute('aria-label', label);
         });
     }
 
@@ -100,23 +107,5 @@ function applyLanguage(lang) {
         btn.setAttribute('aria-pressed', isCurrent);
     });
 }
-const savedLang = localStorage.getItem('preferredLang') || 'en';
-document.documentElement.lang = savedLang;
-function applyLanguage(lang) {
-    if (!translations[lang]) return;
 
-    localStorage.setItem('preferredLang', lang);
-    document.documentElement.lang = lang;
-
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.dataset.i18n;
-        if (translations[lang][key]) {
-            el.textContent = translations[lang][key];
-        }
-    });
-
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.lang === lang);
-    });
-}
 
