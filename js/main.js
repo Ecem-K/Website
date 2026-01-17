@@ -1,8 +1,27 @@
 import { translations } from './lang.js';
 
+// Safe Storage Helper (Prevents Incognito/Security Errors)
+const storage = {
+    get(key, def) {
+        try {
+            return localStorage.getItem(key) || def;
+        } catch (e) {
+            console.warn('LocalStorage access denied:', e);
+            return def;
+        }
+    },
+    set(key, val) {
+        try {
+            localStorage.setItem(key, val);
+        } catch (e) {
+            console.warn('LocalStorage write denied:', e);
+        }
+    }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Initialize Language
-    const savedLang = localStorage.getItem('preferredLang') || 'en';
+    const savedLang = storage.get('preferredLang', 'en');
     applyLanguage(savedLang);
 
     // 2. Dynamic Year
@@ -14,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Setup Language & Theme Toggles
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
-            const lang = e.target.dataset.lang;
+            const lang = e.currentTarget.dataset.lang;
             applyLanguage(lang);
         });
     });
@@ -76,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function applyTheme(theme) {
     // Persist
-    localStorage.setItem('theme', theme);
+    storage.set('theme', theme);
 
     // Apply (Default is dark, so we only need to explicitly set 'light' to trigger the CSS override)
     document.documentElement.setAttribute('data-theme', theme);
@@ -87,7 +106,7 @@ function applyLanguage(lang) {
     if (!translations[lang]) return;
 
     // Persist
-    localStorage.setItem('preferredLang', lang);
+    storage.set('preferredLang', lang);
 
     // Update HTML attribute for A11y
     document.documentElement.lang = lang;
