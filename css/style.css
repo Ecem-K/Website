@@ -281,12 +281,23 @@ body:not([data-theme="light"]) .theme-icon-light {
     color: var(--color-text-sub);
     font-weight: 600;
     padding: var(--space-sm);
+    font-size: 0.95rem;
+    /* Explicit size to match/balance */
 
     /* Alignment Fixes */
     display: inline-flex;
     align-items: center;
     justify-content: center;
     line-height: 1;
+}
+
+/* Common separator styling (targets both .divider and the naked / span) */
+.lang-toggle span {
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    line-height: 1;
+    color: var(--color-text-sub);
 }
 
 .lang-btn.active {
