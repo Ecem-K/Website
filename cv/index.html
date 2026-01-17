@@ -41,17 +41,51 @@
 
         <!-- Main Content (Shell) -->
         <main>
-            <!-- Hero Section -->
-            <section class="hero">
-                <h4 data-i18n="hero.greeting">Hello, I am</h4>
-                <h1 id="hero-name">MY NAME</h1>
-                <h2 data-i18n="hero.role">Creative Developer & Designer</h2>
-                <p data-i18n="hero.bio">
-                    I craft accessible, pixel-perfect, and minimalist web experiences using modern standards.
-                </p>
-                <div class="cta-group">
-                    <a href="/portfolio/" class="btn btn-primary" data-i18n="btn.portfolio">View Portfolio</a>
-                    <a href="/contact/" class="btn btn-outline" data-i18n="btn.contact">Contact Me</a>
+            <div class="cv-header-row">
+                <div>
+                    <h1 data-i18n="cv.title" style="font-size: 2.5rem; margin-bottom: 0;">Curriculum Vitae</h1>
+                    <p style="color: var(--color-text-sub); margin-top: 0.5rem;">Creative Developer & Designer</p>
+                </div>
+                <div class="btn-print-wrap">
+                    <button onclick="window.print()" class="btn btn-outline" data-i18n="cv.download">Print / Save
+                        PDF</button>
+                </div>
+            </div>
+
+            <!-- Experience -->
+            <section class="cv-section">
+                <h3 data-i18n="cv.exp">Experience</h3>
+
+                <div class="cv-item">
+                    <div class="cv-date">2023 - Present</div>
+                    <div class="cv-details">
+                        <h4>Senior Frontend Developer</h4>
+                        <p>Tech Company Inc.</p>
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Lead developer for the main product dashboard.
+                            Implemented accessibility standards...</p>
+                    </div>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-date">2021 - 2023</div>
+                    <div class="cv-details">
+                        <h4>UI Designer</h4>
+                        <p>Creative Studio</p>
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Designed web and mobile interfaces for
+                            international clients...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="cv-section">
+                <h3 data-i18n="cv.edu">Education</h3>
+                <div class="cv-item">
+                    <div class="cv-date">2017 - 2021</div>
+                    <div class="cv-details">
+                        <h4>B.S. Computer Science</h4>
+                        <p>University of Tech</p>
+                    </div>
                 </div>
             </section>
         </main>

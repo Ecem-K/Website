@@ -41,19 +41,40 @@
 
         <!-- Main Content (Shell) -->
         <main>
-            <!-- Hero Section -->
-            <section class="hero">
-                <h4 data-i18n="hero.greeting">Hello, I am</h4>
-                <h1 id="hero-name">MY NAME</h1>
-                <h2 data-i18n="hero.role">Creative Developer & Designer</h2>
-                <p data-i18n="hero.bio">
-                    I craft accessible, pixel-perfect, and minimalist web experiences using modern standards.
-                </p>
-                <div class="cta-group">
-                    <a href="/portfolio/" class="btn btn-primary" data-i18n="btn.portfolio">View Portfolio</a>
-                    <a href="/contact/" class="btn btn-outline" data-i18n="btn.contact">Contact Me</a>
-                </div>
+            <section class="page-header" style="text-align: center; margin-bottom: var(--space-xl);">
+                <h1 data-i18n="contact.title">Get In Touch</h1>
             </section>
+
+            <div class="contact-container">
+                <form action="#" method="POST"
+                    onsubmit="event.preventDefault(); alert('Form submission simulation: Message Sent!');">
+                    <div class="form-group">
+                        <label for="name" class="form-label" data-i18n="contact.name">Name</label>
+                        <input type="text" id="name" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label" data-i18n="contact.email">Email</label>
+                        <input type="email" id="email" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label" data-i18n="contact.message">Message</label>
+                        <textarea id="message" class="form-textarea" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="contact.submit">Send
+                        Message</button>
+                </form>
+
+                <div style="margin-top: var(--space-xl); text-align: center;">
+                    <h4 data-i18n="contact.social" style="font-size: 1rem; margin-bottom: var(--space-md);">Socials</h4>
+                    <div style="display: flex; gap: var(--space-md); justify-content: center;">
+                        <a href="#" style="color: var(--color-text-main);">LinkedIn</a>
+                        <a href="#" style="color: var(--color-text-main);">GitHub</a>
+                    </div>
+                </div>
+            </div>
         </main>
 
         <!-- Footer -->
