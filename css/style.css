@@ -293,11 +293,14 @@ body:not([data-theme="light"]) .theme-icon-light {
 
 /* Common separator styling (targets both .divider and the naked / span) */
 .lang-toggle span {
-    display: flex;
-    align-items: center;
     font-size: 0.95rem;
-    line-height: 1;
     color: var(--color-text-sub);
+    /* Optical correction: standard text render usually aligns better than flex for simple chars */
+    display: inline-block;
+    height: auto;
+    line-height: 1;
+    transform: translateY(1px);
+    /* Nudge down to match button baseline */
 }
 
 .lang-btn.active {
