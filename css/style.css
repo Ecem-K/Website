@@ -112,28 +112,22 @@ nav {
     font-size: 1.2rem;
 }
 
-/* Icons: Logic handled by parent data-theme */
-body:not([data-theme="light"]) .theme-icon-dark {
-    display: none;
-}
-
-/* Default Dark: Hide Moon */
-body:not([data-theme="light"]) .theme-icon-light {
+[data-theme="dark"] .theme-icon-dark {
     display: inline-block;
 }
 
-/* Default Dark: Show Sun */
+[data-theme="dark"] .theme-icon-light {
+    display: none;
+}
 
 [data-theme="light"] .theme-icon-dark {
-    display: inline-block;
-}
-
-/* Light: Show Moon */
-[data-theme="light"] .theme-icon-light {
     display: none;
 }
 
-/* Light: Hide Sun */
+[data-theme="light"] .theme-icon-light {
+    display: inline-block;
+}
+
 
 .divider {
     color: var(--color-text-sub);

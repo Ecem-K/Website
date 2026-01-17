@@ -1,9 +1,6 @@
 import { translations } from './lang.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Initialize Language
-    // Theme is initialized in <head> to prevent FOUC. No JS init here.
-    const savedLang = localStorage.getItem('preferredLang') || 'en';
     applyLanguage(savedLang);
 
     // 2. Dynamic Year
@@ -103,3 +100,23 @@ function applyLanguage(lang) {
         btn.setAttribute('aria-pressed', isCurrent);
     });
 }
+const savedLang = localStorage.getItem('preferredLang') || 'en';
+document.documentElement.lang = savedLang;
+function applyLanguage(lang) {
+    if (!translations[lang]) return;
+
+    localStorage.setItem('preferredLang', lang);
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (translations[lang][key]) {
+            el.textContent = translations[lang][key];
+        }
+    });
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+}
+
