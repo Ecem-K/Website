@@ -38,20 +38,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const themeBtn = document.getElementById('theme-toggle');
-    if (themeBtn) {
-        themeBtn.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    const themeBtn = document.querySelector('.theme-btn');
+    const root = document.documentElement;
 
-            applyTheme(newTheme);
+    if (!themeBtn) return;
 
-            // A11y Update
-            const label = newTheme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode';
-            themeBtn.setAttribute('aria-label', label);
-        });
-    }
-
+    themeBtn.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme') || 'dark';
+        const next = current === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+    });
     // 4. Mobile Menu
     const hamburger = document.getElementById('hamburger');
     const nav = document.querySelector('nav');
