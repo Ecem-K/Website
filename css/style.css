@@ -130,22 +130,22 @@ nav {
 /* Show Moon, Hide Sun */
 .theme-icon-dark,
 [data-theme="dark"] .theme-icon-dark {
-    display: inline-block;
+    display: inline-block !important;
 }
 
 .theme-icon-light,
 [data-theme="dark"] .theme-icon-light {
-    display: none;
+    display: none !important;
 }
 
 /* 2. Light Mode Override (data-theme="light") */
 /* Hide Moon, Show Sun */
 [data-theme="light"] .theme-icon-dark {
-    display: none;
+    display: none !important;
 }
 
 [data-theme="light"] .theme-icon-light {
-    display: inline-block;
+    display: inline-block !important;
 }
 
 
