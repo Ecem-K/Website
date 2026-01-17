@@ -1,10 +1,11 @@
 :root {
-    /* Color Palette - Strict Black & White */
-    --color-bg: #ffffff;
-    --color-text-main: #000000;
-    --color-text-sub: #555555;
-    --color-border: #eeeeee;
-    --color-accent: #000000;
+    /* Color Palette - Default Dark Mode */
+    --color-bg: #111111;
+    --color-text-main: #ffffff;
+    --color-text-sub: #a0a0a0;
+    --color-border: #333333;
+    --color-accent: #ffffff;
+    --color-input-bg: #1a1a1a;
 
     /* Spacing */
     --space-sm: 0.5rem;
@@ -14,6 +15,16 @@
 
     /* Typography */
     --font-main: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+
+[data-theme="light"] {
+    /* Color Palette - Light Mode Override */
+    --color-bg: #ffffff;
+    --color-text-main: #000000;
+    --color-text-sub: #555555;
+    --color-border: #eeeeee;
+    --color-accent: #000000;
+    --color-input-bg: #ffffff;
 }
 
 * {
@@ -27,7 +38,12 @@ body {
     color: var(--color-text-main);
     font-family: var(--font-main);
     line-height: 1.6;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+}
+
+.no-scroll {
+    overflow: hidden;
 }
 
 /* Layout */
@@ -65,7 +81,47 @@ nav {
     color: var(--color-text-main);
 }
 
-color: var(--color-text-main);
+/* Theme Toggle */
+.theme-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-sm);
+    color: var(--color-text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-icon-dark,
+.theme-icon-light {
+    font-size: 1.2rem;
+}
+
+/* Default (Dark Mode): Show Sun (to switch to light) */
+.theme-icon-dark {
+    display: none;
+}
+
+.theme-icon-light {
+    display: inline-block;
+}
+
+/* Light Mode Override: Show Moon (to switch to dark) */
+[data-theme="light"] .theme-icon-dark {
+    display: inline-block;
+}
+
+[data-theme="light"] .theme-icon-light {
+    display: none;
+}
+
+.divider {
+    color: var(--color-text-sub);
+    padding: 0 var(--space-sm);
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
 }
 
 /* Mobile Nav Toggle */
@@ -132,17 +188,40 @@ color: var(--color-text-main);
     .nav-links {
         position: fixed;
         top: 0;
-        left: 0;
-        width: 100%;
+        right: 0;
+        left: auto;
+        /* Override default if any */
+        width: 70%;
+        max-width: 300px;
         height: 100vh;
         background-color: var(--color-bg);
+        border-left: 1px solid var(--color-border);
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transform: translateY(-100%);
+        transform: translateX(100%);
+        /* Slide from right */
         transition: transform 0.3s ease-in-out;
         z-index: 100;
         padding-bottom: var(--space-xl);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-open .nav-links {
+        transform: translateX(0);
+    }
+
+    /* Backdrop */
+    .nav-open::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 99;
+        backdrop-filter: blur(2px);
     }
 
     .nav-links a {
