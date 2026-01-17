@@ -119,18 +119,31 @@ nav {
 }
 
 /* THEME ICON LOGIC - STRICT SOURCE OF TRUTH */
+
+/* Base: Shared Styles */
 .theme-icon-dark,
 .theme-icon-light {
-    display: none;
     font-size: 1.2rem;
 }
 
-/* Dark Mode (Explicit) */
+/* 1. Default State (No attribute or data-theme="dark") */
+/* Show Moon, Hide Sun */
+.theme-icon-dark,
 [data-theme="dark"] .theme-icon-dark {
     display: inline-block;
 }
 
-/* Light Mode (Explicit) */
+.theme-icon-light,
+[data-theme="dark"] .theme-icon-light {
+    display: none;
+}
+
+/* 2. Light Mode Override (data-theme="light") */
+/* Hide Moon, Show Sun */
+[data-theme="light"] .theme-icon-dark {
+    display: none;
+}
+
 [data-theme="light"] .theme-icon-light {
     display: inline-block;
 }
