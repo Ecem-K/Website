@@ -15,6 +15,7 @@
     <!-- Theme Init (FOUC Prevention) -->
     <script>
         (function () {
+            // STRICT REQUIREMENT: Default to 'dark', read 'theme' from localStorage
             const savedTheme = localStorage.getItem('theme') || 'dark';
             document.documentElement.setAttribute('data-theme', savedTheme);
         })();

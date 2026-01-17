@@ -2,7 +2,7 @@ import { translations } from './lang.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Initialize Language
-    // Theme is initialized in <head> to prevent FOUC
+    // Theme is initialized in <head> to prevent FOUC. No JS init here.
     const savedLang = localStorage.getItem('preferredLang') || 'en';
     applyLanguage(savedLang);
 
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger');
     const nav = document.querySelector('nav');
 
-    if (hamburger) {
+    if (hamburger && window.getComputedStyle(hamburger).display !== 'none') {
         // Toggle Menu
         hamburger.addEventListener('click', () => {
             nav.classList.toggle('nav-open');
@@ -42,21 +42,28 @@ document.addEventListener('DOMContentLoaded', () => {
             hamburger.setAttribute('aria-expanded', isOpen);
             document.body.classList.toggle('no-scroll', isOpen);
         });
+    }
 
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
+    // Common listeners: Close menu when clicking link (Mobile only effect mostly, but harmless on desktop)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            // Only act if menu is actually open
+            if (nav.classList.contains('nav-open')) {
                 nav.classList.remove('nav-open');
-                hamburger.setAttribute('aria-expanded', 'false');
+                if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
                 document.body.classList.remove('no-scroll');
-            });
+            }
         });
+    });
 
-        // Close menu when clicking backdrop
+    // Close menu when clicking backdrop (Mobile only)
+    if (nav) {
         nav.addEventListener('click', (e) => {
+            // Check for pseudo-element click (backdrop)
+            // Pseudo-elements are part of the element, but if we click 'nav' itself (which covers screen when open via before)
             if (e.target === nav && nav.classList.contains('nav-open')) {
                 nav.classList.remove('nav-open');
-                hamburger.setAttribute('aria-expanded', 'false');
+                if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
                 document.body.classList.remove('no-scroll');
             }
         });
