@@ -38,16 +38,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const themeBtn = document.querySelector('.theme-btn');
-    const root = document.documentElement;
+    const themeBtn = document.getElementById('theme-toggle');
+    if (themeBtn) {
+        themeBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
-    if (!themeBtn) return;
-
-    themeBtn.addEventListener('click', () => {
-        const current = root.getAttribute('data-theme') || 'dark';
-        const next = current === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', next);
-    });
+            // Apply the new theme using the helper (handles Storage + DOM + A11y)
+            applyTheme(newTheme);
+        });
+    }
     // 4. Mobile Menu
     const hamburger = document.getElementById('hamburger');
     const nav = document.querySelector('nav');
@@ -95,6 +95,13 @@ function applyTheme(theme) {
 
     // Apply (Default is dark, so we only need to explicitly set 'light' to trigger the CSS override)
     document.documentElement.setAttribute('data-theme', theme);
+
+    // A11y: Update Button Label
+    const btn = document.getElementById('theme-toggle');
+    if (btn) {
+        const label = theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+        btn.setAttribute('aria-label', label);
+    }
 }
 
 function applyLanguage(lang) {
