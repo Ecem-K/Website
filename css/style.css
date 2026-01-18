@@ -802,7 +802,8 @@ footer {
 .contact-icons-row {
     display: flex;
     justify-content: center;
-    gap: var(--space-lg);
+    gap: 4rem;
+    /* Increased separation */
     flex-wrap: wrap;
 }
 
@@ -810,27 +811,32 @@ footer {
     width: 60px;
     height: 60px;
     background-color: var(--color-input-bg);
-    /* Use theme bg */
     border-radius: 50%;
-    /* Circle */
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-text-main);
+    color: #ffffff;
+    /* Forced White */
     text-decoration: none;
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
     border: 1px solid var(--color-border);
 }
 
 .icon-btn svg {
-    /* Ensure svg inherits clear size */
     width: 24px;
     height: 24px;
 }
 
 .icon-btn:hover {
     transform: scale(1.1);
-    background-color: var(--color-border);
-    /* Slightly lighter on dark */
-    color: var(--color-text-main);
+    border-color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.icon-btn:active {
+    background-color: #007bff;
+    /* Blue when clicked */
+    border-color: #007bff;
+    color: #ffffff;
+    transform: scale(0.95);
 }
