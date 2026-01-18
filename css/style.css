@@ -829,6 +829,13 @@ footer {
     cursor: pointer;
 }
 
+/* Explicit Light Mode Override */
+[data-theme="light"] .icon-btn {
+    background-color: #000000;
+    border-color: #000000;
+    color: #ffffff;
+}
+
 .icon-btn svg {
     width: 32px;
     height: 32px;
