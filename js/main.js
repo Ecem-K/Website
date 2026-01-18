@@ -87,6 +87,41 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // 5. PDF Preview Modal
+    const previewBtn = document.getElementById('preview-btn');
+    const pdfModal = document.getElementById('pdf-modal');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+
+    if (previewBtn && pdfModal && modalCloseBtn) {
+        // Open
+        previewBtn.addEventListener('click', () => {
+            pdfModal.classList.remove('hidden');
+            document.body.classList.add('no-scroll');
+        });
+
+        // Close via Button
+        modalCloseBtn.addEventListener('click', () => {
+            pdfModal.classList.add('hidden');
+            document.body.classList.remove('no-scroll');
+        });
+
+        // Close via Overlay Click
+        pdfModal.addEventListener('click', (e) => {
+            if (e.target === pdfModal) {
+                pdfModal.classList.add('hidden');
+                document.body.classList.remove('no-scroll');
+            }
+        });
+
+        // Close via Escape Key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !pdfModal.classList.contains('hidden')) {
+                pdfModal.classList.add('hidden');
+                document.body.classList.remove('no-scroll');
+            }
+        });
+    }
 });
 
 function applyTheme(theme) {

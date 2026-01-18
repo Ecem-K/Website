@@ -63,131 +63,137 @@
                         Designer</p>
                 </div>
                 <div class="btn-print-wrap" style="display: flex; gap: var(--space-sm);">
-                    <a href="/cv/Ecem_Kayap%C4%B1nar_CV.pdf" download class="btn btn-primary"
-                        data-i18n="cv.downloadFile">Download CV</a>
+                    <button id="preview-btn" class="btn btn-outline" data-i18n="cv.print" style="cursor: pointer;">Print
+                        / Save PDF</button>
                 </div>
             </div>
 
-            <!-- Skills -->
-            <section class="cv-section">
-                <h3 data-i18n="cv.skills">Skills</h3>
-
-                <h4
-                    style="font-size: 0.9rem; color: var(--color-text-sub); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">
-                    Programming & Development</h4>
-                <ul class="skill-list" style="margin-top: 0; margin-bottom: var(--space-md);">
-                    <li class="skill-item">Java</li>
-                    <li class="skill-item">Python</li>
-                    <li class="skill-item">SQL</li>
-                    <li class="skill-item">Java Spring Boot</li>
-                    <li class="skill-item">Full Stack Development</li>
-                    <li class="skill-item">AI Applications</li>
-                </ul>
-
-                <h4
-                    style="font-size: 0.9rem; color: var(--color-text-sub); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">
-                    Design & Creative Tools</h4>
-                <ul class="skill-list" style="margin-top: 0; margin-bottom: var(--space-md);">
-                    <li class="skill-item">Figma</li>
-                    <li class="skill-item">Canva</li>
-                    <li class="skill-item">Digital Illustration</li>
-                    <li class="skill-item">Graphic Design</li>
-                    <li class="skill-item">Drawing & Sketching</li>
-                    <li class="skill-item">Concept Art</li>
-                </ul>
-
-                <h4
-                    style="font-size: 0.9rem; color: var(--color-text-sub); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">
-                    Core Strengths</h4>
-                <ul class="skill-list" style="margin-top: 0; margin-bottom: var(--space-md);">
-                    <li class="skill-item">Visual Thinking</li>
-                    <li class="skill-item">Innovative Problem-Solving</li>
-                    <li class="skill-item">Content Planning</li>
-                    <li class="skill-item">Social Media Management</li>
-                </ul>
-            </section>
-
-            <!-- Experience -->
-            <section class="cv-section">
-                <h3 data-i18n="cv.exp">Experience</h3>
-
-                <div class="cv-item">
-                    <div class="cv-date">12/2025 - Present</div>
-                    <div class="cv-details">
-                        <h4>Executive Management / Design Department</h4>
-                        <p>Maker Lab</p>
-                        <ul
-                            style="margin-top: 0.5rem; font-size: 0.9rem; padding-left: 1.2rem; color: var(--color-text-sub);">
-                            <li>Lead the project design function, creating innovative visual solutions to achieve
-                                strategic objectives.</li>
-                            <li>Manage and produce engaging content for social media, successfully increasing brand
-                                visibility and follower growth.</li>
-                            <li>Coordinate the end-to-end planning and organization of club events.</li>
-                        </ul>
-                    </div>
+            <!-- PDF Preview Modal -->
+            <div id="pdf-modal" class="modal-overlay hidden">
+                <div class="modal-content">
+                    <button id="modal-close-btn" class="modal-close" data-i18n="cv.close">Close</button>
+                    <iframe src="/cv/Ecem_Kayap%C4%B1nar_CV.pdf" class="pdf-frame" title="CV Preview"></iframe>
                 </div>
+            </div>
+    </div>
 
-                <div class="cv-item">
-                    <div class="cv-date">09/2023 - Present</div>
-                    <div class="cv-details">
-                        <h4>Active Member</h4>
-                        <p>IEEE (Institute of Electrical and Electronics Engineers)</p>
-                        <ul
-                            style="margin-top: 0.5rem; font-size: 0.9rem; padding-left: 1.2rem; color: var(--color-text-sub);">
-                            <li>Facilitate communication with sponsors to build and enhance strategic partnerships.</li>
-                            <li>Collaborate with cross-functional teams to drive successful event organization and
-                                participant engagement.</li>
-                        </ul>
-                    </div>
-                </div>
+    <!-- Skills -->
+    <section class="cv-section">
+        <h3 data-i18n="cv.skills">Skills</h3>
 
-                <div class="cv-item">
-                    <div class="cv-date">06/2025 - 07/2025</div>
-                    <div class="cv-details">
-                        <h4>Intern</h4>
-                        <p>Akgün Yazılım</p>
-                        <ul
-                            style="margin-top: 0.5rem; font-size: 0.9rem; padding-left: 1.2rem; color: var(--color-text-sub);">
-                            <li>Developed a comprehensive Health Center Management System, refining full-stack
-                                development skills.</li>
-                            <li>Contributed innovative ideas during brainstorming sessions to improve project outcomes
-                                and solve technical problems.</li>
-                            <li>Gained practical insights into operational processes and daily software development
-                                workflows.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+        <h4
+            style="font-size: 0.9rem; color: var(--color-text-sub); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">
+            Programming & Development</h4>
+        <ul class="skill-list" style="margin-top: 0; margin-bottom: var(--space-md);">
+            <li class="skill-item">Java</li>
+            <li class="skill-item">Python</li>
+            <li class="skill-item">SQL</li>
+            <li class="skill-item">Java Spring Boot</li>
+            <li class="skill-item">Full Stack Development</li>
+            <li class="skill-item">AI Applications</li>
+        </ul>
 
-            <!-- Education -->
-            <section class="cv-section">
-                <h3 data-i18n="cv.edu">Education</h3>
-                <div class="cv-item">
-                    <div class="cv-date">01/2023 - Present</div>
-                    <div class="cv-details">
-                        <h4>Software Engineering</h4>
-                        <p>University of Turkish Aeronautical Association – Ankara</p>
-                        <p style="margin-top: 0.25rem; font-size: 0.9rem;">GPA: 2.96</p>
-                    </div>
-                </div>
-            </section>
+        <h4
+            style="font-size: 0.9rem; color: var(--color-text-sub); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">
+            Design & Creative Tools</h4>
+        <ul class="skill-list" style="margin-top: 0; margin-bottom: var(--space-md);">
+            <li class="skill-item">Figma</li>
+            <li class="skill-item">Canva</li>
+            <li class="skill-item">Digital Illustration</li>
+            <li class="skill-item">Graphic Design</li>
+            <li class="skill-item">Drawing & Sketching</li>
+            <li class="skill-item">Concept Art</li>
+        </ul>
 
-            <!-- Languages -->
-            <section class="cv-section">
-                <h3 data-i18n="cv.lang">Languages</h3>
-                <ul class="skill-list">
-                    <li class="skill-item">Turkish (Native)</li>
-                    <li class="skill-item">English (Advanced / C1)</li>
+        <h4
+            style="font-size: 0.9rem; color: var(--color-text-sub); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">
+            Core Strengths</h4>
+        <ul class="skill-list" style="margin-top: 0; margin-bottom: var(--space-md);">
+            <li class="skill-item">Visual Thinking</li>
+            <li class="skill-item">Innovative Problem-Solving</li>
+            <li class="skill-item">Content Planning</li>
+            <li class="skill-item">Social Media Management</li>
+        </ul>
+    </section>
+
+    <!-- Experience -->
+    <section class="cv-section">
+        <h3 data-i18n="cv.exp">Experience</h3>
+
+        <div class="cv-item">
+            <div class="cv-date">12/2025 - Present</div>
+            <div class="cv-details">
+                <h4>Executive Management / Design Department</h4>
+                <p>Maker Lab</p>
+                <ul style="margin-top: 0.5rem; font-size: 0.9rem; padding-left: 1.2rem; color: var(--color-text-sub);">
+                    <li>Lead the project design function, creating innovative visual solutions to achieve
+                        strategic objectives.</li>
+                    <li>Manage and produce engaging content for social media, successfully increasing brand
+                        visibility and follower growth.</li>
+                    <li>Coordinate the end-to-end planning and organization of club events.</li>
                 </ul>
-            </section>
-        </main>
+            </div>
+        </div>
 
-        <!-- Footer -->
-        <footer>
-            <p>&copy; <span id="year">2026</span> Ecem Kayapınar. <span data-i18n="footer.rights">All rights
-                    reserved.</span>
-            </p>
-        </footer>
+        <div class="cv-item">
+            <div class="cv-date">09/2023 - Present</div>
+            <div class="cv-details">
+                <h4>Active Member</h4>
+                <p>IEEE (Institute of Electrical and Electronics Engineers)</p>
+                <ul style="margin-top: 0.5rem; font-size: 0.9rem; padding-left: 1.2rem; color: var(--color-text-sub);">
+                    <li>Facilitate communication with sponsors to build and enhance strategic partnerships.</li>
+                    <li>Collaborate with cross-functional teams to drive successful event organization and
+                        participant engagement.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="cv-item">
+            <div class="cv-date">06/2025 - 07/2025</div>
+            <div class="cv-details">
+                <h4>Intern</h4>
+                <p>Akgün Yazılım</p>
+                <ul style="margin-top: 0.5rem; font-size: 0.9rem; padding-left: 1.2rem; color: var(--color-text-sub);">
+                    <li>Developed a comprehensive Health Center Management System, refining full-stack
+                        development skills.</li>
+                    <li>Contributed innovative ideas during brainstorming sessions to improve project outcomes
+                        and solve technical problems.</li>
+                    <li>Gained practical insights into operational processes and daily software development
+                        workflows.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="cv-section">
+        <h3 data-i18n="cv.edu">Education</h3>
+        <div class="cv-item">
+            <div class="cv-date">01/2023 - Present</div>
+            <div class="cv-details">
+                <h4>Software Engineering</h4>
+                <p>University of Turkish Aeronautical Association – Ankara</p>
+                <p style="margin-top: 0.25rem; font-size: 0.9rem;">GPA: 2.96</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages -->
+    <section class="cv-section">
+        <h3 data-i18n="cv.lang">Languages</h3>
+        <ul class="skill-list">
+            <li class="skill-item">Turkish (Native)</li>
+            <li class="skill-item">English (Advanced / C1)</li>
+        </ul>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="year">2026</span> Ecem Kayapınar. <span data-i18n="footer.rights">All rights
+                reserved.</span>
+        </p>
+    </footer>
     </div>
 
     <!-- Logic -->
