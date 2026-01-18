@@ -24,6 +24,7 @@
 [data-theme="dark"] {
     --color-bg: #111111;
     --color-text-main: #ffffff;
+    --color-text-main-rgb: 255, 255, 255;
     --color-text-sub: #a0a0a0;
     --color-border: #333333;
     --color-accent: #ffffff;
@@ -34,6 +35,7 @@
 [data-theme="light"] {
     --color-bg: #ffffff;
     --color-text-main: #000000;
+    --color-text-main-rgb: 0, 0, 0;
     --color-text-sub: #555555;
     --color-border: #eeeeee;
     --color-accent: #000000;
@@ -771,4 +773,108 @@ footer {
         top: -35px;
         right: 10px;
     }
+}
+
+/* ========================================= */
+/* CONTACT HUB (New Static Design)           */
+/* ========================================= */
+.contact-hub {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--space-xl) var(--space-md);
+    position: relative;
+    /* overflow: hidden; */
+    /* Optional, depending on accents */
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.contact-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-sm);
+    letter-spacing: -0.02em;
+}
+
+.contact-subtitle {
+    color: var(--color-text-sub);
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Grid Layout */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Contact Cards */
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-text-main);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.contact-card.primary {
+    border-color: var(--color-text-main);
+    background: rgba(var(--color-text-main-rgb), 0.03);
+    /* Needs RGB vars or fallback */
+}
+
+.card-icon {
+    font-size: 1.5rem;
+    opacity: 0.8;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-label {
+    font-size: 0.85rem;
+    color: var(--color-text-sub);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.card-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-main);
+}
+
+/* Visual Accent (Abstract Line) */
+.visual-accent {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+    margin-top: var(--space-xl);
+    opacity: 0.5;
 }

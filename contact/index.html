@@ -56,39 +56,53 @@
 
         <!-- Main Content (Shell) -->
         <main>
-            <section class="page-header" style="text-align: center; margin-bottom: var(--space-xl);">
-                <h1 data-i18n="contact.title">Get In Touch</h1>
-            </section>
+            <div class="contact-hub">
+                <header class="contact-header">
+                    <h1 data-i18n="contact.title">Let's Connect</h1>
+                    <p class="contact-subtitle" data-i18n="contact.subtitle">For collaborations, projects, or
+                        conversations.</p>
+                </header>
 
-            <div class="contact-container">
-                <form action="#" method="POST"
-                    onsubmit="event.preventDefault(); alert('Form submission simulation: Message Sent!');">
-                    <div class="form-group">
-                        <label for="name" class="form-label" data-i18n="contact.name">Name</label>
-                        <input type="text" id="name" class="form-input" required>
-                    </div>
+                <div class="contact-grid">
+                    <!-- Email Card (Primary) -->
+                    <a href="mailto:ecemkkypnr@gmail.com" class="contact-card primary">
+                        <div class="card-icon">✉</div>
+                        <div class="card-info">
+                            <span class="card-label" data-i18n="contact.email">Email</span>
+                            <span class="card-value">ecemkkypnr@gmail.com</span>
+                        </div>
+                    </a>
 
-                    <div class="form-group">
-                        <label for="email" class="form-label" data-i18n="contact.email">Email</label>
-                        <input type="email" id="email" class="form-input" required>
-                    </div>
+                    <!-- LinkedIn -->
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="contact-card">
+                        <div class="card-icon">in</div>
+                        <div class="card-info">
+                            <span class="card-label" data-i18n="contact.social_linkedin">LinkedIn</span>
+                            <span class="card-value">Connect</span>
+                        </div>
+                    </a>
 
-                    <div class="form-group">
-                        <label for="message" class="form-label" data-i18n="contact.message">Message</label>
-                        <textarea id="message" class="form-textarea" required></textarea>
-                    </div>
+                    <!-- GitHub -->
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="contact-card">
+                        <div class="card-icon">gh</div>
+                        <div class="card-info">
+                            <span class="card-label" data-i18n="contact.social_github">GitHub</span>
+                            <span class="card-value">Follow</span>
+                        </div>
+                    </a>
 
-                    <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="contact.submit">Send
-                        Message</button>
-                </form>
-
-                <div style="margin-top: var(--space-xl); text-align: center;">
-                    <h4 data-i18n="contact.social" style="font-size: 1rem; margin-bottom: var(--space-md);">Socials</h4>
-                    <div style="display: flex; gap: var(--space-md); justify-content: center;">
-                        <a href="#" style="color: var(--color-text-main);">LinkedIn</a>
-                        <a href="mailto:ecemkkypnr@gmail.com" style="color: var(--color-text-main);">Email</a>
-                    </div>
+                    <!-- Instagram -->
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="contact-card">
+                        <div class="card-icon">ig</div>
+                        <div class="card-info">
+                            <span class="card-label" data-i18n="contact.social_instagram">Instagram</span>
+                            <span class="card-value">Follow</span>
+                        </div>
+                    </a>
                 </div>
+
+                <!-- Visual Accent -->
+                <div class="visual-accent"></div>
             </div>
         </main>
 

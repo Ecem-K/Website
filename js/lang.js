@@ -27,12 +27,13 @@ export const translations = {
         "port.title": "Selected Works",
         "port.view": "View Project",
         "port.code": "View Code",
-        "contact.title": "Get In Touch",
-        "contact.name": "Name",
+        "contact.title": "Let's Connect",
+        "contact.subtitle": "For collaborations, projects, or conversations.",
         "contact.email": "Email",
-        "contact.message": "Message",
-        "contact.submit": "Send Message",
-        "contact.social": "Socials"
+        "contact.social_linkedin": "LinkedIn",
+        "contact.social_github": "GitHub",
+        "contact.social_instagram": "Instagram",
+        "contact.social_portfolio": "Portfolio"
     },
     tr: {
         "nav.home": "Anasayfa",
@@ -62,11 +63,12 @@ export const translations = {
         "port.title": "Seçilmiş İşler",
         "port.view": "Projeyi Gör",
         "port.code": "Kodu İncele",
-        "contact.title": "İletişime Geç",
-        "contact.name": "İsim",
+        "contact.title": "Bağlantı Kuralım",
+        "contact.subtitle": "İş birlikleri, projeler veya sohbetler için.",
         "contact.email": "E-posta",
-        "contact.message": "Mesaj",
-        "contact.submit": "Mesaj Gönder",
-        "contact.social": "Sosyal Medya"
+        "contact.social_linkedin": "LinkedIn",
+        "contact.social_github": "GitHub",
+        "contact.social_instagram": "Instagram",
+        "contact.social_portfolio": "Portfolyo"
     }
 };
