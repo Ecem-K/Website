@@ -1,4 +1,4 @@
-import { translations } from './lang.js';
+import { translations } from './lang.js?v=2';
 
 // Safe Storage Helper (Prevents Incognito/Security Errors)
 const storage = {
