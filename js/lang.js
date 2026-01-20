@@ -1,3 +1,4 @@
+/* Language Configuration */
 export const translations = {
     en: {
         "nav.home": "Home",
